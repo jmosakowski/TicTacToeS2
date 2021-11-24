@@ -25,7 +25,7 @@ namespace TicTacToeS2
             for (int round = 0; round < gameBoard.Length; round++)
             {
                 Console.Clear();
-                // TODO: draw the board
+                Draw(gameBoard);
 
                 if (nextIsPlayer1)
                 {
@@ -46,9 +46,21 @@ namespace TicTacToeS2
 
             // End the game
             Console.Clear();
-            // TODO: draw the board
+            Draw(gameBoard);
             Console.Write("Game ended! ");
             // TODO: print who won
+        }
+        
+        /******************************************************************/
+        
+        static void Draw(char[,] board)
+        {
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                    Console.Write(board[i, j]);
+                Console.WriteLine();
+            }
         }
     }
 }
