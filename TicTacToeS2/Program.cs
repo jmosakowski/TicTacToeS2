@@ -6,6 +6,13 @@ namespace TicTacToeS2
     {
         static void Main(string[] args)
         {
+            HumanPlayer p1 = new HumanPlayer();
+            ComputerPlayer p2 = new ComputerPlayer();
+            p1.Name = "Jacek";
+            p2.Name = "AI";
+            p1.Symbol = 'x';
+            p2.Symbol = 'o';
+
             // Create two boards - with starting and with current fields
             char[,] startBoard = {
                 { '1', '2', '3' },
@@ -29,12 +36,14 @@ namespace TicTacToeS2
 
                 if (nextIsPlayer1)
                 {
-                    // TODO: player 1 move
+                    Console.WriteLine(p1.Name + " move");
+                    player1Won = p1.MakeMove(startBoard, gameBoard);
                     nextIsPlayer1 = false;
                 }
                 else
                 {
-                    // TODO: player 2 move
+                    Console.WriteLine(p2.Name + " move");
+                    player2Won = p2.MakeMove(startBoard, gameBoard);
                     nextIsPlayer1 = true;
                 }
 
